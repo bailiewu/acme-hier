@@ -1,7 +1,7 @@
 function showManagementStructure(users){
     let result = ''
     let boss = findBoss(users);
-    console.log(boss.name)
+    // console.log(boss.name)
     result += boss.name
     findSubordinates(boss, users)
     function findSubordinates(bossI, user, tiersBelow = 0){
@@ -11,7 +11,7 @@ function showManagementStructure(users){
                 let temp = ''
                 for (let i = 1; i < tiersBelow; i++) temp += `\t`
                 temp += ` - ${element.name}`
-                console.log(temp)
+                // console.log(temp)
                 result += `\n${temp}`
                 let isManager = false
                 for (const key in user) {
@@ -23,7 +23,9 @@ function showManagementStructure(users){
             }
         });
     }
-    return result
+    //changed return result to consolelog
+    // return result
+    console.log(result)
     function findBoss(ary) {
         let temp
         ary.forEach(element => {
@@ -38,7 +40,7 @@ const users = [
 	{ id: 2, name: 'larry', managerId: 1},
 	{ id: 3, name: 'curly', managerId: 2 },
 	{ id: 4, name: 'shep', managerId: 1 },
-    { id: 5, name: 'shepkid', managerId: 4},
+    { id: 5, name: 'groucho', managerId: 4},
 ];
 
 console.log('showManagementStructure(users):')
